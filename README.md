@@ -70,7 +70,7 @@ You can search for your any dish and mark them as favourites. You can find all y
 
 ## Hosted Link
 
-Visit site: [Foodie](https://antu99g.github.io/Foodie/)
+Visit site: [Foodie](https://foodie-7cb378.netlify.app)
 
 
 ## Screenshots
