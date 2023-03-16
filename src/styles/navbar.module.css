@@ -1,0 +1,27 @@
+@import './variables.css';
+
+.nav{
+   padding: .5vh 0 1.5vh;
+   display: flex;
+   align-items: center;
+}
+
+.logo{
+   color: var(--nav-green-color);
+   margin: 0 8vw;
+   font-family: 'Lobster', 'cursive';
+   letter-spacing: 0.05rem;
+   font-size: 2.2em;
+}
+.nav > .link{
+   color: aliceblue;
+   text-decoration: none;
+   cursor: default;
+   margin-right: 6vw;
+   margin-top: 10px;
+   font-size: 1.2em;
+}
+.nav > .link:hover{
+   transform: scale(1.1);
+   color: var(--nav-green-color);
+}

@@ -1,0 +1,8 @@
+@import './variables.css';
+
+.header{
+   color: var(--primary-green);
+   margin-left: 3vw;
+   font-family: 'Gothic A1', sans-serif;
+   letter-spacing: .03em;
+}
