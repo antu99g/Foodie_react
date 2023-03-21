@@ -76,13 +76,13 @@ function Home() {
       if (inputRef.current.value === ''){
          toast.warn("Please name a dish to search");
       } else {
-         setSuggestions([]);
          const response = await fetchMealByName(inputRef.current.value);
          if(response !== null){
             let header = await inputRef.current.value;
             header = header[0].toUpperCase() + header.substring(1).toLowerCase();
             setResultHead(header);
             setResults(response);       
+            setSuggestions([]);
             scroll();
          } else {
             inputRef.current.value = '';
@@ -175,7 +175,7 @@ function Home() {
             </div>
          )}
 
-         <Cuisine/>
+         {/* <Cuisine/> */}
 
          <div className={styles.categoryContainer}>
             <h1>Categories</h1>

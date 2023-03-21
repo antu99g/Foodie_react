@@ -6,3 +6,36 @@
    font-family: 'Gothic A1', sans-serif;
    letter-spacing: .03em;
 }
+
+.container{
+   margin: 12vh 0 6vh;
+   width: 100%;
+}
+.container > div{
+   width: 100%;
+   /* display: flex;
+   flex-wrap: nowrap;
+   overflow-x: hidden; */
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.container span:first-child{
+   margin-left: 9vw;
+}
+.container span:last-child{
+   margin-right: 9vw;
+}
+.cuisine{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-width: 20vw;
+   height: 18vw;
+   margin: 0 4.5vw;
+   padding: 10px;
+   border: 1px solid red;
+   flex: 0 0 auto;
+   scroll-snap-align: start;
+}

@@ -1,5 +1,6 @@
 const API_PREFIX = "https://www.themealdb.com/api/json/v1/1";
 
+
 // Function for fetching all categories
 export const fetchCategories = async () => {
    let res = await fetch(API_PREFIX + '/categories.php');
@@ -40,9 +41,20 @@ export const fetchSearchSuggestion = async (keyword) => {
 };
 
 // Function for fetching all areas
-export const searchAllCuisines = async () => {
+export const fetchAllCuisines = async () => {
    let res = await fetch(API_PREFIX + "/list.php?a=list");
    let json = await res.json();
+   const cuisines = json.meals.map((meal) => meal.strArea);
 
-   return json.meals;
+   return cuisines;
+};
+
+// Function for fetching background of all cuisines
+export const fetchCuisineBackground = async (area) => {
+   let res = await fetch(API_PREFIX + `/filter.php?a=${area}`);
+   let json = await res.json();
+   let responseObj = {};
+   responseObj[area] = json.meals[0].strMealThumb;
+
+   return responseObj;
 };
