@@ -1,11 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { fetchAllCuisines, fetchCuisineBackground } from "../api";
 import styles from '../styles/cuisine.module.css';
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 function Cuisine () {
    const [cuisines, setCuisines] = useState([]);
 
-   // const [cuisineBg, setCuisineBg] = useState([]);
+   const [cuisineBg, setCuisineBg] = useState({});
 
    const [slide, setSlide] = useState(true);
 
@@ -14,34 +15,56 @@ function Cuisine () {
    useLayoutEffect(() => {
       fetchAllCuisines().then((response) => {
          setCuisines((cuisines) => response);
-         // carousal(true);
       });
-      // (async () => {
-      //    cuisines.forEach((area) => {
-      //       fetchCuisineBackground(area).then((response) => setCuisineBg((bg) => [...bg, response]));
-      //    });
-      // })();
    }, []);
+      
+   useEffect(() => {
+      (async () => {
+         await Promise.all(
+            cuisines.map((area) => {
+               fetchCuisineBackground(area).then((response) => {
+                  setCuisineBg((bg) => {
+                     return {...bg, ...response};
+                  });
+               });
+            })
+         );
+      })();
+   }, [cuisines]);
 
 
-   // useEffect(() => {
-   //    console.log("timer started");
-   //    let card = document.getElementById("ppp");
-   //    const timer = setInterval(() => {
-   //       let left = sliderRef.current.offsetLeft;
-   //       // let newLeft = left + card.offsetWidth;
-   //       console.log(left, card);
-   //       sliderRef.current.style.left = `${left+30}px`;
-   //    }, 3000);
-   //    if (!slide) {
-   //       console.log("clear interval");
-   //       clearInterval(timer);
-   //    }
-   // }, []);
+   useEffect(() => {
+      let slider = sliderRef.current;
+      if(cuisines.length > 0){
+         const slideLength = slider.children[1].offsetWidth;
+         
+         const interval = setInterval(() => {
+            if(slide){
+               const sliderEnd = slider.children[slider.children.length-1].offsetLeft;
+               if (sliderEnd < -(slider.offsetLeft - 900)) {
+                  slider.style.left = "0";
+               } else {
+                  let newLeft = slider.offsetLeft - slideLength * 1.5;
+                  slider.style.left = `${newLeft}px`;
+               }
+            }
+         }, 4000);
+
+         return () => clearInterval(interval);
+      }
+   }, [cuisines, slide]);
 
 
-   const bgImg = (cuisine) => {
-      fetchCuisineBackground(cuisine).then((res) => {return {backgroundImage: `url(${res[cuisine]})`}});
+   const scrollTo = (dir) => {
+      let slider = sliderRef.current;
+      const slideLength = slider.children[1].offsetWidth;
+      if(dir === 'left') {
+         let newLeft = slider.offsetLeft + slideLength * 1.5;
+         slider.style.left = `${newLeft}px`;
+      } else if(dir === 'right') {
+         let newLeft = slider.offsetLeft - slideLength * 1.5;
+         slider.style.left = `${newLeft}px`;
+      }
    }
 
    
@@ -49,15 +72,30 @@ function Cuisine () {
    return (
       <div className={styles.container}>
          {/* <h1 className={styles.header}>Cuisine</h1> */}
+         <FaAngleLeft
+            onClick={() => scrollTo("left")}
+            onMouseEnter={() => setSlide(false)}
+            onMouseLeave={() => setSlide(true)}
+         />
+         <FaAngleRight
+            onClick={() => scrollTo("right")}
+            onMouseEnter={() => setSlide(false)}
+            onMouseLeave={() => setSlide(true)}
+         />
+
          {cuisines && cuisines.length > 0 && (
-            <div ref={sliderRef}>
+            <div
+               ref={sliderRef}
+               onMouseEnter={() => setSlide(false)}
+               onMouseLeave={() => setSlide(true)}
+            >
                {cuisines.map((cuisine, i) => {
                   return (
                      <span
-                        id={i === 1 ? "ppp" : "p"}
-                        className={`${styles.cuisine}`}
-                        onMouseEnter={() => setSlide(false)}
-                        onMouseLeave={() => setSlide(true)}
+                        className={styles.cuisine}
+                        style={{
+                           backgroundImage: `url(${cuisineBg[cuisine]})`,
+                        }}
                         key={i}
                      >
                         {cuisine}

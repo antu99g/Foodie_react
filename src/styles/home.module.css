@@ -4,8 +4,12 @@
    background-image: url('../assets/foodie.jpg');
    background-size: cover;
 }
+
+
+/* Search Section */
+
 .searchContainer{
-   height: 80vh;
+   height: 82vh;
    display: flex;
    align-items: center ;
    justify-content: center;
@@ -153,8 +157,13 @@
    justify-content: space-around;
 }
 .categories div{
-   margin: 10px;
+   padding: 10px;
    width: 15%;
+   border-radius: 8px;
+}
+.categories div:hover{
+   background-color: rgba(0, 0, 0, .2);
+   transition: background-color .5s ease-in-out;
 }
 .categories div img{
    margin: auto;

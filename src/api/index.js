@@ -55,6 +55,7 @@ export const fetchCuisineBackground = async (area) => {
    let json = await res.json();
    let responseObj = {};
    responseObj[area] = json.meals[0].strMealThumb;
+   // console.log(responseObj);
 
    return responseObj;
 };

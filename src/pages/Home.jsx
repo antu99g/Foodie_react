@@ -175,7 +175,7 @@ function Home() {
             </div>
          )}
 
-         {/* <Cuisine/> */}
+         <Cuisine/>
 
          <div className={styles.categoryContainer}>
             <h1>Categories</h1>

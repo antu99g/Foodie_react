@@ -8,24 +8,40 @@
 }
 
 .container{
-   margin: 12vh 0 6vh;
+   margin: 12vh 0 4vh;
    width: 100%;
+   overflow-x: hidden;
+   position: relative;
 }
 .container > div{
    width: 100%;
-   /* display: flex;
-   flex-wrap: nowrap;
-   overflow-x: hidden; */
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+   display: flex;
+   position: relative;
+   transition: left 1s ease-in-out;
+}
+.container > svg{
+   position: absolute;
+   z-index: 2;
+   color: var(--primary-green);
+   font-size: 2.5em;
+   top: 42%;
+   border-radius: 5px;
+   background-color: rgba(255, 255, 255, 0.5);
+}
+.container > svg:hover{
+   background-color: rgba(255, 255, 255, 0.3);
+}
+.container svg:first-child{
+   left: 10px;
+}
+.container svg:nth-child(2){
+   left: 95vw;
 }
 .container span:first-child{
-   margin-left: 9vw;
+   margin-left: 10vw;
 }
 .container span:last-child{
-   margin-right: 9vw;
+   margin-right: 10vw;
 }
 .cuisine{
    display: flex;
@@ -33,9 +49,16 @@
    align-items: center;
    min-width: 20vw;
    height: 18vw;
-   margin: 0 4.5vw;
-   padding: 10px;
-   border: 1px solid red;
-   flex: 0 0 auto;
-   scroll-snap-align: start;
+   margin: 0 5vw;
+   border-radius: 8px;
+   background-size: cover;
+   font-size: 2em;
+   letter-spacing: .05em;;
+   color: white;
+   background-color: rgba(0, 0, 0, .5);
+   background-blend-mode: overlay;
+}
+.cuisine:hover{
+   font-size: 2.4em;
+   transition: font-size .2s ease-in-out;
 }

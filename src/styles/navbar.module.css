@@ -7,7 +7,7 @@
 }
 
 .logo{
-   color: var(--nav-green-color);
+   color: var(--nav-green);
    margin: 0 8vw;
    font-family: 'Lobster', 'cursive';
    letter-spacing: 0.05rem;
@@ -23,5 +23,5 @@
 }
 .nav > .link:hover{
    transform: scale(1.1);
-   color: var(--nav-green-color);
+   color: var(--nav-green);
 }
