@@ -23,9 +23,7 @@ function Cuisine () {
          await Promise.all(
             cuisines.map((area) => {
                fetchCuisineBackground(area).then((response) => {
-                  setCuisineBg((bg) => {
-                     return {...bg, ...response};
-                  });
+                  setCuisineBg((bg) => {return {...bg, ...response}});
                });
             })
          );
