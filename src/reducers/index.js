@@ -1,28 +1,28 @@
-import { ADD_FAVOURITE, REMOVE_FAVOURITE } from "../actions";
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "../actions";
 
-const localFavourites = localStorage.getItem('FOODIE_FAVOURITES');
 const initialState = {
-   favourites: localFavourites || [], // List of all habits
+  favorites: [],
 };
 
-
 // Reducer
-export default function favourite(state = initialState, action) {
-   switch (action.type) {
-      case ADD_FAVOURITE: // Reducer for adding new favourite dish
-         return {
-            ...state,
-            favourites: [...state.favourites, action.favourite],
-         };
+export default function favorite(state = initialState, action) {
+  switch (action.type) {
+    case ADD_FAVORITE: // Reducer for adding new favorite dish
+      return {
+        ...state,
+        favorites: [...state.favorites, action.favorite],
+      };
 
-      case REMOVE_FAVOURITE: // Reducer for removing a favourite dish
-         const updatedFavourites = state.favourites.filter((id) => action.favourite !== id);
-         return {
-            ...state,
-            favourites: updatedFavourites,
-         };
+    case REMOVE_FAVORITE: // Reducer for removing a favorite dish
+      const updatedFavorites = state.favorites.filter(
+        (id) => action.favorite !== id
+      );
+      return {
+        ...state,
+        favorites: updatedFavorites,
+      };
 
-      default:
-         return state;
-   }
+    default:
+      return state;
+  }
 }

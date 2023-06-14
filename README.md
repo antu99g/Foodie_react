@@ -1,7 +1,6 @@
 # Foodie
 
-This is a react frontend project using an api called 'The Meal DB'. You can search for any dish and mark dishes as favourite. You can check all of your favourite dishes at once. you can see details and preperation of any dish.
-
+This is a react frontend project using an api called 'The Meal DB'. You can search for any dish and mark dishes as favorite. You can check all of your favorite dishes at once. you can see details and preperation of any dish.
 
 ## Run the project
 
@@ -11,32 +10,30 @@ To run this project, run the following command
   npm start
 ```
 
-
 ## Tech Stack
 
- `React` `Redux` `CSS Module` `JavaScript`
-
+`React` `Redux` `CSS Module` `JavaScript`
 
 ## Features
 
 - Search suggestions
-- Mark favourite dishes
+- Mark favorite dishes
 - See details of any dish
 - Search dishes by different categories
 - Search dishes from differen cuisine
 
-
 ## Usage
 
-You can search for your any dish and mark them as favourites. You can find all your favourite dishes in the favourites page linked in the navbar. You can see preparation and other details of any particular dish.
+You can search for your any dish and mark them as favorites. You can find all your favorite dishes in the favorites page linked in the navbar. You can see preparation and other details of any particular dish.
+
 ## API Reference
 
-
 #### API prefix
+
 `www.themealdb.com/api/json`
 
-
 #### Test API key (free)
+
 `1`
 
 #### Get all meal categories
@@ -47,31 +44,25 @@ You can search for your any dish and mark them as favourites. You can find all y
 
 `/v1/1/search.php?s=${name}`
 
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `/search.php?s=`      | `string` | **Required**: Name of item to fetch |
+| Parameter        | Type     | Description                         |
+| :--------------- | :------- | :---------------------------------- |
+| `/search.php?s=` | `string` | **Required**: Name of item to fetch |
 
 #### Get meal details by id
 
 `/lookup.php?i=${id}`
 
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `/lookup.php?i=`      | `number` | **Required**: Id of item to fetch |
-
-
+| Parameter        | Type     | Description                       |
+| :--------------- | :------- | :-------------------------------- |
+| `/lookup.php?i=` | `number` | **Required**: Id of item to fetch |
 
 ## Documentation
 
 [The Meal DB](https://www.themealdb.com/api.php)
 
-
 ## Hosted Link
 
 Visit site: [Foodie](https://foodie-7cb378.netlify.app)
-
 
 ## Screenshots
 

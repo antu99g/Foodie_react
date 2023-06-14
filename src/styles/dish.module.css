@@ -1,79 +1,81 @@
-@import './variables.css';
+@import "./variables.css";
 
 .nav {
-   background-color: rgb(26, 25, 25);
-   box-shadow: none;
+  background-color: rgb(26, 25, 25);
+  box-shadow: none;
 }
 
-.detailContainer div{
-   width: 85vw;
-   margin: auto;
-   position: relative;
+.detailContainer div {
+  width: 85vw;
+  margin: auto;
+  position: relative;
 }
-.detailContainer h1{
-   text-align: center;
-   text-decoration: underline;
-   color: var(--primary-green);
-   font-family: 'EB Garamond', serif;
-   letter-spacing: 0.05em;
-   word-spacing: 0.1em;
+.detailContainer h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: var(--primary-green);
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
 }
 
 /* Container of Img and Description */
-.details{
-   display: flex;
-   padding: 1vw;
-   border: 1px solid var(--primary-green);
-   margin-top: 2vw;
-   font-family: 'Gothic A1', sans-serif;
-   font-size: 1.1em;
+.details {
+  margin-top: 2vw;
+  padding: 1vw;
+  display: flex;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.1em;
+  border: 1px solid var(--primary-green);
+  border-radius: 5px;
 }
-.details img{
-   max-width: 100%;
-   width: 15%;
-   margin-right: 4vw;
+.details img {
+  max-width: 100%;
+  width: 15%;
+  align-self: center;
+  margin-right: 4vw;
 }
-.details p{
-   font-size: 1.2em;
+.details p {
+  font-size: 1.2em;
 }
-.details p a{
-   font-size: 0.8em;
-   margin-left: 10px;
+.details p a {
+  font-size: 0.8em;
+  margin-left: 10px;
 }
-.details p a:hover{
-   color: orangered;
+.details p a:hover {
+  color: orangered;
 }
-.detailContainer div svg{
-   position: absolute;
-   top: 20px;
-   right: 20px;
-   color: rgb(211, 21, 21);
-   font-size: 1.4em;
+.detailContainer div svg {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgb(211, 21, 21);
+  font-size: 1.4em;
 }
 
 /* Unordered List */
-.detailContainer > h2{
-   margin-left: 7vw;
-   margin-top: 7vh;
-   color: var(--primary-green);
+.detailContainer > h2 {
+  margin-left: 7vw;
+  margin-top: 7vh;
+  color: var(--primary-green);
 }
-.detailContainer ul{
-   box-sizing: border-box;
-   width: 85vw;
-   margin: auto;
-   padding-left: 50px;
-   list-style-type: circle;
-   font-family: 'Gothic A1', sans-serif;
+.detailContainer ul {
+  box-sizing: border-box;
+  width: 85vw;
+  margin: auto;
+  padding-left: 50px;
+  list-style-type: circle;
+  font-family: "Gothic A1", sans-serif;
 }
-.detailContainer ul li{
-   margin: 3vh 0;
-   word-spacing: .03em;
-   letter-spacing: .02em;
+.detailContainer ul li {
+  margin: 3vh 0;
+  word-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
-.veg{
-   color: green;
+.veg {
+  color: green;
 }
-.nonVeg{
-   color: red;
+.nonVeg {
+  color: red;
 }

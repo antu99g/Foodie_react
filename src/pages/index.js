@@ -1,5 +1,5 @@
 import Home from "./Home";
-import Favourites from "./Favourites";
+import List from "./List";
 import Dish from "./Dish";
 
-export { Home, Favourites, Dish };
+export { Home, List, Dish };

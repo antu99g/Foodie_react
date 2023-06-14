@@ -1,21 +1,21 @@
 // Action types
-export const ADD_FAVOURITE = "ADD_FAVOURITE";
-export const REMOVE_FAVOURITE = "REMOVE_FAVOURITE";
+export const ADD_FAVORITE = "ADD_FAVORITE";
+export const REMOVE_FAVORITE = "REMOVE_FAVORITE";
 
 // Action creators
 
 // Action for adding new habit
-export function addFavourite(favourite) {
-   return {
-      type: ADD_FAVOURITE,
-      favourite,
-   };
+export function addFavorite(favorite) {
+  return {
+    type: ADD_FAVORITE,
+    favorite,
+  };
 }
 
 // Action for adding 'none' status to each habit when date changes
-export function removeFavourite(favourite) {
-   return {
-      type: REMOVE_FAVOURITE,
-      favourite,
-   };
+export function removeFavorite(favorite) {
+  return {
+    type: REMOVE_FAVORITE,
+    favorite,
+  };
 }
